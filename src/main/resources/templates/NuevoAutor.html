@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuevo Autor</title>
+</head>
+<body>
+	<h1 >Añadir nuevo Autor</h1>
+	<form action="#" th:action="@{/guardar_autor}" th:object="${autor}" method="post">
+        <label for="Nombre Autor">Nombre:</label>
+        <input type="text" id="Nombre" th:field="*{Nombre}" /><br/>
+        
+        <label for="Apellidos Autor">Apellidos:</label>
+        <input type="text" id="apellidos" th:field="*{Apellidos}" /><br/>
+
+        <button type="submit">Guardar Autor</button>
+    </form>
+</body>
+</html>

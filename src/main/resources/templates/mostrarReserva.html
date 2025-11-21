@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>Reservas realizadas:</h2>
+	
+	<div >
+		<ul>
+		<!-- Recorremos el HashMap y vamos mostrando los datos que tiene almacenado-->
+    		<li th:each="entry : ${reservas}">
+        		Libro: <span th:text="${entry.value.titulo}"></span> -
+        		Usuario:<span th:text="${entry.key.nombre}"></span>
+    		</li>
+		</ul>
+	</div>
+</body>
+</html>

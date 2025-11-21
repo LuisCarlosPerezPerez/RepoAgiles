@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Modificar libro</h1>
+	<div>
+			<!-- formulario para identificar el isbn que se quiere -->
+	  		<form action="#" th:action="@{/modificacion}" th:object="${libro}" method="post">
+		        <label for="ISBN libro">Introduce el ISBN del libro a modificar</label>
+		        <input type="text" id="modificar_isbn" name="modificar"/><br/>
+		        <button type="submit">Modificar Libro</button>
+    		</form>
+        </div>
+ 
+</body>
+</html>

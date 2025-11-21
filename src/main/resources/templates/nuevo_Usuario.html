@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Nuevo Usuario</title>
+</head>
+<body>
+	<h1 >Añadir nuevo Usuario</h1>
+	<form action="#" th:action="@{/guardar_usuario}" th:object="${usuario}" method="post">
+        <label for="DNI usuario">DNI:</label>
+        <input type="text" id="DNI" th:field="*{DNI}" /><br/>
+        
+        <label for="nombre usuario">Nombre:</label>
+        <input type="text" id="nombre" th:field="*{nombre}" /><br/>
+        
+        <label for="apellidos usuario">Apellidos:</label>
+        <input type="text" id="apellidos" th:field="*{apellidos}" /><br/>
+        
+        <label for="edad usuario:">Edad:</label>
+        <input type="text" id="edad" th:field="*{edad}" /><br/>
+        
+        <button type="submit">Guardar Usuario</button>
+    </form>
+</body>
+</html>

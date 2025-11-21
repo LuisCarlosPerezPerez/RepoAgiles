@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+		<h1>Buscar libros del autor</h1>
+	<div>
+			<!-- formulario para identificar el isbn que se quiere -->
+	  		<form action="#" th:action="@{/mostrarlibroautor}" th:object="${autor}" method="post">
+		        <label for="ISBN libro">Introduce el Nombre del autor </label>
+		        <input type="text" id="nombre" name="nombre"/><br/>
+		        <br>
+		        <label for="ISBN libro">Introduce el Apellido del autor </label>
+		        <input type="text" id="apellido" name="apellido"/><br/>
+		        <button type="submit">Buscar</button>
+    		</form>
+        </div>
+ 
+</body>
+</html>

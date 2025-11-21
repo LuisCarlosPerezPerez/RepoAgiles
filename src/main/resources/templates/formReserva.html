@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Reserva</h1>
+	<form th:action="@{/reservar}" method="post">
+		<div>
+			<!-- formulario para identificar el isbn que se quiere yel usuario que lo reserva-->
+		        <label for="ISBN libro">Introduce el ISBN del libro a reservar</label>
+		        <input type="text" id="reservar_isbn" name="isbn"/><br/>
+   
+        </div>
+		<div>
+		        <label for="ISBN libro">Introduce el DNI del usuario</label>
+		        <input type="text" id="reservar_dni" name="dni"/><br/>
+        </div>
+        <div>
+        	<button type="submit">Realizar Reserva</button>
+        </div>
+    </form>
+</body>
+</html>

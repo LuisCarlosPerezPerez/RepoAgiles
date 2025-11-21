@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Lista de Usuarios</title>
+</head>
+<body>
+	
+	 <!-- Comprobamos si hay usuarios en la lista -->
+        <div th:if="${usuarios.isEmpty()}">
+            <p>No hay usuarios disponibles.</p>
+        </div>
+        
+        <!-- Mostramos la tabla solo si hay Usuarios -->
+        <div th:if="${not usuarios.isEmpty()}">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    	<th>DNI</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iteramos sobre la lista de usuarios -->
+                    <tr th:each="usuario : ${usuarios}">
+                    	<td th:text="${usuario.DNI}">DNI del usuario</td>
+                        <td th:text="${usuario.nombre}">Nombre del usuario</td>
+                        <td th:text="${usuario.apellidos}">Apellido del usuario</td>
+                        <td th:text="${usuario.edad}">Edad del usuario</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Enlace para volver a la pagina inicial -->
+        <a href="/" class="btn btn-primary mt-3">Volver</a>
+    </div>
+</body>
+</html>

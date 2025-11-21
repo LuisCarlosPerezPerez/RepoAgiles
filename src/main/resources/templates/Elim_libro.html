@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>  
+		<div>
+			<!-- formulario para identificar el isbn que se quiere -->
+	  		<form action="#" th:action="@{/eliminar_libro}" th:object="${libro}" method="post">
+		        <label for="ISBN libro">Introduce el ISBN del libro a eliminar</label>
+		        <input type="text" id="eliminar_isbn" name="eliminacion"/><br/>
+		        <button type="submit">Eliminar Libro</button>
+    		</form>
+        </div>
+</body>
+</html>

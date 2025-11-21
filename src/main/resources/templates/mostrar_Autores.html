@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Comprobamos si hay usuarios en la lista -->
+        <div th:if="${autores.isEmpty()}">
+            <p>No hay autores disponibles.</p>
+        </div>
+        
+        <!-- Mostramos la tabla solo si hay Usuarios -->
+        <div th:if="${not autores.isEmpty()}">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iteramos sobre la lista de usuarios -->
+                    <tr th:each="autor : ${autores}">
+                    	<td th:text="${autor.Nombre}">Nombre del Autor</td>
+                        <td th:text="${autor.Apellidos}">Apellidos del Autor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Enlace para volver a la pagina inicial -->
+        <a href="/" class="btn btn-primary mt-3">Volver</a>
+    </div>
+</body>
+</html>

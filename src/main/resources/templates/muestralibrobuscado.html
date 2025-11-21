@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Libro</title>
+</head>
+<body>
+	<!-- Mostrar libros -->
+	<div class="container">
+        <h1 class="mt-4">Libro buscado</h1>
+        <!-- Comprobamos que libros no sea null, en el caso que no lo sea, y que muestre el libro buscado -->
+			<div th:if="${libros != null}">
+			    <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    	<th>Identificador</th>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Publicado en</th>
+                        <th>ISBN</th> 
+                    </tr>
+                </thead>
+	             <tbody>
+				    <tr th:each="libro : ${libros}">
+				        <td th:text="${libro.identificador}">Identificador</td>
+				        <td th:text="${libro.titulo}">Título</td>
+				        <td th:text="${libro.autor}">Autor</td>
+				        <td th:text="${libro.publicadoen}">Publicado en</td>
+				        <td th:text="${libro.isbn}">ISBN</td>
+				    </tr>
+				</tbody>
+            </table>
+        </div>
+			</div>
+			<!-- En el caso de que libros sea null, saca este mensaje ya que el isbn puesto, no lo tiene ningun libro -->
+			<div th:if="${libros == null}">
+			    No tenemos el libro 
+			</div>
+
+        <!-- Enlace para volver a la pagina inicial -->
+        <a href="/" class="btn btn-primary mt-3">Volver</a>
+    </div>
+</body>
+</html>

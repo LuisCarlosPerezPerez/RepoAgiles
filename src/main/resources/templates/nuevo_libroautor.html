@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 >Añadir nuevo libro</h1>
+
+	<form action="#" th:action="@{/guardar_libroautor}" th:object="${libro}" method="post">
+	<div>
+		<label for="identificador libro">Identificador:</label>
+        <input type="text" id="identificador" th:field="*{identificador}" /><br/>
+        
+        <label for="titulo libro">Titulo del libro:</label>
+        <input type="text" id="titulo" th:field="*{titulo}" /><br/>
+        
+        <label for="autor libro">Autor del libro:</label>
+        <input type="text" id="autor" th:field="*{autor}" /><br/>
+        
+        <label for="publicado en:">Publicado en:</label>
+        <input type="text" id="publicacion" th:field="*{publicadoen}" /><br/>
+
+		<label for="ISBN libro">ISBN:</label>
+        <input type="text" id="isbn" name="isbn" th:field="*{isbn}" /><br/>
+	</div>
+    <div>
+		<label for="Nombre Autor">Nombre:</label>
+        <input type="text" id="Nombre" name="Nombre"/><br/>
+        
+        <label for="Apellidos Autor">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" /><br/>
+	</div>
+        <button type="submit">Guardar Libro</button>
+    </form>
+</body>
+</html>

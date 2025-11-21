@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Libros</title>
+</head>
+<body>
+	<!-- Mostrar libros -->
+	<div class="container">
+        <h1 class="mt-4">Lista de Libros</h1>
+
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    	<th>Identificador</th>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Publicado en</th>
+                        <th>ISBN</th>
+                        <th>Cantidad</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iteramos sobre la lista de libros -->
+                    <tr th:each="numlibro : ${libros}">
+                    	<td th:text="${numlibro.libro.identificador}">Identificador del libro</td>
+                        <td th:text="${numlibro.libro.titulo}">Titulo del libro</td>
+                        <td th:text="${numlibro.libro.autor}">Autor del libro</td>
+                        <td th:text="${numlibro.libro.publicadoen}">Publicado en</td>
+                        <td th:text="${numlibro.libro.isbn}">ISBN</td>
+                        <td th:text="${numlibro.cantidad}">Cantidad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Enlace para volver a la pagina inicial -->
+        <a href="/" class="btn btn-primary mt-3">Volver</a>
+    </div>
+</body>
+</html>

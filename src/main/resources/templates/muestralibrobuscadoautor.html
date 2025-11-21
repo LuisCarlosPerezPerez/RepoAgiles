@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+			<!-- Mostrar libros -->
+	<div class="container">
+        <h1 class="mt-4">Lista de Libros por autor</h1>
+
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                    	<th>Identificador</th>
+                        <th>Titulo</th>
+                        <th>Autor</th>
+                        <th>Publicado en</th>
+                        <th>ISBN</th>
+                        <th>Nombre Autor</th>   
+                        <th>Apellido Autor</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Iteramos sobre la lista de libros -->
+                    <tr th:each="autorlibro : ${autorlibrosautor}">
+                    	<td th:text="${autorlibro.libro.identificador}">Identificador del libro</td>
+                        <td th:text="${autorlibro.libro.titulo}">Titulo del libro</td>
+                        <td th:text="${autorlibro.libro.autor}">Autor del libro</td>
+                        <td th:text="${autorlibro.libro.publicadoen}">Publicado en</td>
+                        <td th:text="${autorlibro.libro.isbn}">ISBN</td>
+                        <td th:text="${autorlibro.autor.Nombre}">Nombre</td>
+                        <td th:text="${autorlibro.autor.Apellidos}">Apellido</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Enlace para volver a la pagina inicial -->
+        <a href="/" class="btn btn-primary mt-3">Volver</a>
+    </div>
+	
+</body>
+</html>
